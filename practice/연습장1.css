@@ -1,0 +1,53 @@
+*{
+  background-color: #171717;
+  color: aliceblue;
+}
+h1, h2{
+  margin: 10px;
+  text-align: center;
+}
+h1 > a{
+  text-decoration-line: none;
+}
+h3{
+  margin: 0px;
+  display: inline-block;
+  text-align: left;
+}
+h4{
+  display: inline-block;
+  margin: 10px;
+}
+nav{
+  display: flex;
+  justify-content: center;
+}
+nav > nav{
+  width: 100px;
+  margin: 0px -1px;
+  border-left: 2px solid #999999;
+  border-right: 2px solid #999999;
+  text-align: center;
+}
+div > a, nav > a{
+  color: bisque;
+}
+article{
+  min-height: 700px;
+  padding: 20px;
+  text-align: justify;
+}
+table{
+  border-collapse: collapse;
+  text-align: justify;
+}
+th{
+  text-align: center;
+}
+td{
+  min-width: 35px;
+}
+footer{
+  text-align: center;
+  min-height: 150px;
+}
