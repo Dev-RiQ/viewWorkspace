@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본 선택자</title>
+
+  <style>
+    * {
+      margin: 0px;
+      border: 1px solid black;
+    }
+
+    h1 {
+      color: blue;
+    }
+
+    .type1 {
+      background-color: lightblue;
+      margin: 5px 10px;
+    }
+
+    #type2 {
+      background-color: pink;
+      padding: 5px 10px;
+    }
+
+    p.a {
+      background-color: rgb(255, 103, 103, 0.5);
+    }
+
+    p.b {
+      background-color: rgb(114, 255, 114);
+    }
+
+    p.c {
+      background-color: #6464dd;
+    }
+
+    p.d {
+      /* background-color: #888888; */
+      background-color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- h1.type1 -->
+  <h1 class="type1">class가 type1인 h1</h1>
+  <!-- h1#type2 -->
+  <h1 id="type2">id가 type2인 h1</h1>
+  <h1 class="b">class가 b인 h1</h1>
+
+  <p class="type1">class가 type1인 p</p>
+  <p class="type1">class가 type1인 p</p>
+
+  <h1 style="color:pink;">그냥 h1</h1>
+  <p class="a">color 1</p>
+  <p class="b">color 2</p>
+  <p class="c">color 3</p>
+  <p class="d">color 4</p>
+</body>
+
+</html>

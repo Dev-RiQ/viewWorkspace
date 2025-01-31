@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form 실습</title>
+</head>
+
+<body>
+  <form action="ex09_form태그.html" method="get">
+    <fieldset>
+      <legend>기본 정보</legend>
+      <p><label for="userid">아이디</label><input type="text" id="userid"></p>
+      <p><label for="passwd">비밀번호</label><input type="password" id="passwd"></p>
+    </fieldset>
+    <fieldset>
+      <legend>선택 정보</legend>
+      <p><label for="age">나이</label><input type="number" id="age"></p>
+      <p><label for="recommender">추천인</label><input type="text" id="" recommender"></p>
+    </fieldset>
+    <!-- form 안에서는 자동 submit type으로 결정 -->
+    <!-- <input type="submit" value="submit" /> -->
+    <button> submit </button>
+  </form>
+
+  <button> test </button>
+  <button onclick="alert('안녕하세요?')">눌러보세요!</button>
+
+
+  <form action="#"> <!-- http://localhost/order.php?check1=green&check2=S -->
+    <h3>색상(단일선택)</h3>
+    <p>
+      <input type="radio" name="check1" value="red"> <!-- 같은 name값을 가지면 택1의 조건 설정이 됨 (grouping)-->
+      <input type="radio" name="check1" value="green">
+      <input type="radio" name="check1" value="blue">
+    </p>
+    <h3>사이즈(단일선택)</h3>
+    <p>
+      <input type="radio" name="check2" value="L">
+      <input type="radio" name="check2" value="M" checked> <!-- checked : 기본값 부여 -->
+      <input type="radio" name="check2" value="S">
+    </p>
+    <h3>수량(다중선택)</h3> <!-- http://localhost/order.php?check1=green&check2=L&dum=1&dum=5&dum=10 -->
+    <p>
+      <input type="checkbox" name="dum" value="1" checked>
+      <input type="checkbox" name="dum" value="5">
+      <input type="checkbox" name="dum" value="10">
+      <input type="checkbox" name="dum" value="50">
+      <input type="checkbox" name="dum" value="100">
+    </p>
+    <input type="submit">
+  </form>
+  <hr>
+
+  <form>
+    과일 선택:
+    <input type="checkbox" checked>Apple
+    <input type="checkbox">Grape
+    <input type="checkbox">Orange
+  </form>
+  <hr>
+
+  <form action="#">
+    <select name="color">
+      <option value="1">red</option> <!-- value : 컴퓨터에게 전송할 데이터-->
+      <option value="2" selected>green</option>
+      <option value="3">blue</option>
+    </select>
+    <input type="submit">
+
+  </form>
+  <hr>
+
+  <form>
+    이메일: <input type="email" required><br>
+    <input type="submit" value="전송하기">
+  </form>
+  <hr>
+  <form method="post" enctype="multipart/form-data">
+    <input type="file" name="profile"><br>
+    <input type="submit">
+  </form>
+
+  <hr>
+  <form action="#">
+    <input type="text" name="ip" value="test" disabled>
+    <input type="text" name="ip" value="test" readonly>
+    <input type="hidden" name="ip" value="접속ip정보"> <!-- 페이지에 표시되지 않지만, 서버에 전송되는 값을 설정할 때 사용 -->
+    <input type="submit">
+  </form>
+
+  <hr>
+  <form>
+    양식제한:
+    <input type="tel" required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="###-####-####"><br>
+    <hr>
+    데이트 <input type="date">
+    <hr>
+    시간 <input type="time">
+    <hr>
+    숫자 <input type="number" min="230" max="290" step="10" value="260">
+    <hr>
+    범위제한 <input type="range" min="1" max="10" value="1">
+    <hr>
+    색상선택: <input type="color">
+    <input type="submit" />
+  </form>
+</body>
+
+</html>

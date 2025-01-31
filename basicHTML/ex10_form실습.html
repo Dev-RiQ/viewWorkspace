@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="ex10_form실습.html">
+    <fieldset>
+      <legend><strong>이메일 작성</strong></legend>
+      <label for="name">이&nbsp;&nbsp;&nbsp;름 : </label>
+      <input type="text" required pattern="+" id="name" name="name" placeholder="이름을 입력하세요">
+      <br><label for="email">이메일 : </label>
+      <input type="text" required pattern="[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.]+[a-zA-Z]+[.]*[a-zA-Z]*" id="
+      email" name="email" placeholder="example@exam.ple" title="example@exam.ple">
+      <br><label for="content">내&nbsp;&nbsp;&nbsp;용 : </label>
+      <br><textarea required pattern="+" id="content" name="content" rows="10" cols="33"></textarea>
+      <br><button>Send</button>
+      <button type="reset">Reset</button>
+    </fieldset>
+  </form>
+</body>
+
+</html>
