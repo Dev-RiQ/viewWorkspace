@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>크기단위</title>
+  <style>
+    .parent {
+      font-size: 100px;
+    }
+
+    .child {
+      font-size: 80%;
+    }
+
+    .child-to-child {
+      font-size: 80%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <p>test1</p>
+    <div class="child">
+      <p>test2</p>
+      <div class="child-to-child">
+        <p>test3</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

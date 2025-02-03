@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본선택자2</title>
+  <style>
+    h1,
+    h2,
+    h3 {
+      border: 1px solid black;
+    }
+
+    h1+h2 {
+      color: blue;
+    }
+
+    h1~h3 {
+      color: red;
+    }
+
+    h1~div {
+      color: green;
+    }
+
+    div h3 {
+      color: pink;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>test1</h1>
+  <h2>test2</h2>
+  <h3>test3</h3>
+  <h3>test4</h3>
+  <h2>test5</h2>
+  <div>
+    <h3>test6</h3>
+    <div>
+      <h3>test7</h3>
+    </div>
+  </div>
+
+</body>
+
+</html>

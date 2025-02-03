@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>트렌지션실습2</title>
+  <style>
+    div {
+      width: 150px;
+      height: 80px;
+      word-wrap: break-word;
+      padding: 0px 5px;
+      color: white;
+      background-color: blue;
+      cursor: pointer;
+      border-radius: 5px;
+      line-height: 80px;
+      box-sizing: border-box;
+      transition-timing-function: cubic-bezier(.64, .09, .26, .7);
+      transition: 1s;
+    }
+
+    div:hover {
+      width: 400px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <strong>마우스를 올리면 길어져요</strong>
+  </div>
+</body>
+
+</html>

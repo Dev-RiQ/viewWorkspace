@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상선택자</title>
+  <style>
+    p::after,
+    p::before {
+      content: "|";
+      color: blue;
+      margin: 10px;
+    }
+
+    p {
+      color: red;
+      font-weight: 600;
+    }
+
+    h1#test1 {
+      color: blueviolet;
+    }
+
+    h1#test1:hover {
+      color: green;
+    }
+
+    h1#test1:active {
+      color: blue;
+    }
+
+    input[type="text"]:focus {
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Lorem ipsum dolor sit</p>
+  <h1 id="test1">test1</h1>
+  <input type="text">
+</body>
+
+</html>
