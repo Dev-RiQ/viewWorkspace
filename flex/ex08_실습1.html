@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습1</title>
+  <style>
+    * {
+      margin: 0px;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      animation: bounce 1s ease infinite;
+    }
+
+    body * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      background-color: yellow;
+      animation: rotate 1s ease infinite;
+    }
+
+    section {
+      height: 80%;
+      width: 80%;
+      background-color: lightgray;
+      animation: spinY 1s linear infinite;
+    }
+
+    section h1 {
+      height: 60%;
+      width: 60%;
+      font-size: 100%;
+      background-color: gray;
+      animation: spinX 1s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+
+    @keyframes spinX {
+      from {
+        transform: rotateX(0deg);
+        background-color: red;
+        transform: scale(1);
+      }
+
+      25% {
+        background-color: blue;
+      }
+
+      50% {
+        background-color: violet;
+      }
+
+      75% {
+        background-color: yellow;
+        transform: scale(3);
+      }
+
+      to {
+        transform: -rotateX(180deg);
+        background-color: green;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes spinY {
+      from {
+        transform: rotateY(180deg);
+      }
+
+      to {
+        transform: rotateY(0deg);
+      }
+    }
+
+    @keyframes bounce {
+      from {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.3);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <section>
+      <h1>수직 중앙 수평 중앙 중첩하기</h1>
+    </section>
+  </div>
+</body>
+
+</html>

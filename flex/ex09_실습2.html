@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습2</title>
+  <style>
+    .container {
+      display: flex;
+    }
+
+    .box {
+      display: flex;
+      border: 2px solid red;
+      flex: 1;
+    }
+
+    .box div {
+      height: 200px;
+      flex: 1;
+    }
+
+    .box div:nth-child(1) {
+      background-color: yellow;
+    }
+
+    .box div:nth-child(2) {
+      background-color: green;
+    }
+
+    @media (max-width:768px) and (min-width:0px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p>클래스 box의 자식 div 높이를 200px 설정</p>
+  <p>미디어쿼리 768 이하 세로로 나열 </p>
+  <div class="container">
+    <div class="box">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="box">
+      <div></div>
+      <div></div>
+    </div>
+    <div class="box">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+
+</html>

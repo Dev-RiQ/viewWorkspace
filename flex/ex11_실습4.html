@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습4</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2,
+    p {
+      margin: 15px;
+    }
+
+    section {
+      max-width: 1200px;
+      display: flex;
+      padding: 20px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+    }
+
+    article.content1 {
+      background-color: yellow;
+      flex: 1;
+      height: 100%;
+
+    }
+
+    article.content2 {
+      flex: 1;
+    }
+
+    article div {
+      height: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .content2 .sub1 {
+      background-color: lightblue;
+    }
+
+    .content2 .sub2 {
+      background-color: lightpink;
+    }
+
+    @media (max-width:768px) {
+      section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <article class="content1">
+      <h2>content1</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, consequuntur! Vel ea hic
+        aperiam provident qui exercitationem rem voluptas, voluptatum libero quidem saepe magni nostrum vero, quaerat
+        quis, minus perspiciatis.
+        Earum cumque officiis porro? Illo, sint neque quisquam fugiat voluptatem libero nesciunt maxime. In amet
+        commodi, quasi nobis quia maxime corrupti perferendis maiores culpa eligendi! Sint quod quia dolores officia.
+        Consequatur iure porro debitis eius natus suscipit minima, necessitatibus quod! Magni architecto velit ipsa
+        tempora consectetur expedita a nam labore? Suscipit explicabo nobis facere repellat quae voluptatibus qui,
+        adipisci numquam?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo voluptas beatae error, esse
+        fuga magni nam hic consectetur possimus pariatur, quidem sapiente magnam. Perferendis exercitationem repellat
+        animi ipsam! Earum, perferendis.
+        Soluta nihil nulla ipsam fugiat repellat dolore sit. Itaque, alias voluptate, libero dolores, et maxime iste
+        quibusdam modi accusamus reiciendis deserunt! Ab consequuntur sapiente repellendus debitis iste quas, iusto
+        asperiores.</p>
+    </article>
+    <article class="content2">
+      <div class="sub1">
+        <h2>sub1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt nesciunt, harum ipsam quisquam
+          blanditiis, minima quod facilis repudiandae quas atque sequi adipisci, doloremque facere ipsa alias sit?
+          Ipsum, vel illo.</p>
+      </div>
+      <div class="sub2">
+        <h2>sub2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, veniam. Ut odio quo
+          aliquid excepturi, consequatur, veniam aspernatur obcaecati enim dolorum aperiam ad eligendi perspiciatis
+          sapiente ratione eos recusandae iusto.</p>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>

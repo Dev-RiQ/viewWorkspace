@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습3</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header,
+    footer,
+    main,
+    aside {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    header {
+      background-color: tomato;
+    }
+
+    section {
+      display: flex;
+      flex: 8;
+    }
+
+    aside.left {
+      background-color: yellow;
+    }
+
+    main {
+      padding: 20px;
+      background-color: lightgray;
+      flex: 4;
+    }
+
+    aside.right {
+      background-color: yellowgreen;
+    }
+
+    footer {
+      background-color: aqua;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        flex-direction: column;
+      }
+
+      main {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>header</header>
+    <section>
+      <aside class="left">left</aside>
+      <main>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta quia laudantium vero, saepe non odio culpa,
+          quod natus eos tempore sapiente delectus error, quos hic. Exercitationem iure perferendis itaque voluptatem.
+        </p>
+      </main>
+      <aside class="right">right</aside>
+    </section>
+    <footer>footer</footer>
+  </div>
+</body>
+
+</html>
