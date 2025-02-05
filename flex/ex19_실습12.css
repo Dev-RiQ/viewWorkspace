@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+/* body font-fmaily를 상속받지 않는 태그들  */
+button,input,textarea{font-family: 'Montserrat', sans-serif;}
+body{
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+.container{
+  height: 100%;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form{
+  background-color: #fff;
+  width: 85%;
+  max-width: 768px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgb(245, 114, 250);
+  padding: 20px;
+}
+.login-form>h2{
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.sns-login{
+  display: flex;
+  justify-content: space-between;
+}
+.btn{
+  padding: 10px;
+  width: 32%;
+  color: #eee;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.btn.facebook{
+  background-color: #1877F2;
+}
+.btn.twitter{
+  background-color: #1DA1F2;
+}
+.btn.google{
+  background-color: #FF3300;
+}
+input{
+  padding: 5px;
+}
+.field{
+  width: 100%;
+  padding: 10px 0px;
+}
+.field>input{
+  width: calc(100% - 100px);
+  float: right;
+}
+.submit-btn{
+  float: right;
+  margin-top: 10px;
+}
+.btn-submit{
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #eee;
+  background-color: #106adf;
+}
+.btn:hover, .btn-submit:hover{
+  opacity: 0.8;
+}
+.btn:active, .btn-submit:active{
+  opacity: 0.4;
+}
+input:focus{
+  background-color: rgb(104, 173, 238);
+  outline-color: rgb(158, 228, 224);
+}
+@media (max-width:768px){
+  .login-form{
+    min-width: 100%;
+  }
+  .sns-login{
+    flex-direction: column;
+  }
+  .btn{
+    width: 100%;
+    margin: 5px 0px;
+  }
+  .field>input{
+    width : 100%;
+    margin-bottom: 10px;
+  }
+  .submit-btn{
+    width: 100%;
+  }
+  .btn-submit{
+    padding: 10px calc(50% - 25px);
+  }
+}

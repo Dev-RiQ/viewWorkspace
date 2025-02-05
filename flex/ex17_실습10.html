@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습10</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+    }
+
+    .card-item {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .card-item>div {
+      min-width: 250px;
+      width: 30%;
+      height: 50%;
+      border: 2px solid red;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-item>div>h2 {
+      margin-bottom: 10px;
+    }
+
+    .card-item>div>p {
+      height: 160px;
+      margin-bottom: 10px;
+      display: flex;
+      overflow-y: auto;
+    }
+
+    .card-item>div>.image>img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+
+    .card-item>div>.image>img:hover {
+      transform: scale(1.5);
+    }
+
+    .image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    @media (max-width:768px) {
+      .card-item {
+        flex-direction: column;
+
+        >div {
+          margin: 10px;
+        }
+      }
+
+      .card-item>div {
+        width: 50%;
+      }
+
+      .card-item>div>p {
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card-item">
+    <div class="card1">
+      <h2>Card #01</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate facilis quidem ipsum eos minima atque
+        eveniet
+        quas commodi ratione, officia illo animi architecto hic est sint nihil exercitationem saepe iste?
+        Ipsum deserunt et, rerum nam corrupti iusto sint sequi similique, temporibus soluta quidem minus odio facere
+        minima veniam? Illo in est quos totam impedit neque nihil aliquam odit quibusdam architecto.</p>
+      <div class="image"><img src="https://cdn.tkvoice.co.kr/news/photo/202502/1373_517_1936.png" alt="picture"></div>
+    </div>
+    <div class="card2">
+      <h2>Card #02</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia amet ad sit vero iste quasi ratione praesentium
+        fugit placeat? Fugit delectus unde quaerat reprehenderit perferendis? Aspernatur soluta architecto doloremque
+        et?
+      </p>
+      <div class="image"><img
+          src="https://www.chosun.com/resizer/v2/D4ZBWLYRIZKW3F5SDH7EP5G4UQ.jpg?auth=0f4766d3253ec0cc4dd6514f98a2f5fc6a703226153c1ce2fdfbc7164081bfe2&width=616"
+          alt="picture"></div>
+    </div>
+    <div class="card3">
+      <h2>Card #03</h2>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quis, praesentium inventore exercitationem
+        laudantium natus temporibus doloremque fugit, unde sint at tempore illo deserunt dolore labore, corporis
+        molestiae
+        assumenda voluptatibus.
+        Dicta eaque obcaecati tempore hic sint sit nesciunt exercitationem enim, ea, iure suscipit minima non provident
+        est modi laborum aut perspiciatis nobis ipsum? Eos unde aliquam consequuntur quidem in ipsum!
+        Temporibus minus fugiat reprehenderit eligendi ut ullam veniam consequatur aliquam vel, aspernatur, deserunt
+        minima ex, sequi ducimus unde maxime aperiam quas quod laboriosam cumque? Pariatur et nisi distinctio fugiat
+        ipsam.
+        Illo delectus necessitatibus, eum labore optio eius voluptatum! Consectetur, earum! Earum minima deleniti
+        accusantium. Culpa harum consequuntur reiciendis, quas voluptatum ducimus repellendus vel omnis eaque a et
+        dolore
+        facere labore?</p>
+      <div class="image"><img src="https://img6.yna.co.kr/mpic/YH/2017/03/29/MYH20170329011100038_P4.jpg" alt="picture">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
