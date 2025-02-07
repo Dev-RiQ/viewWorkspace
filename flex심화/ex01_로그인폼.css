@@ -62,10 +62,14 @@ input{
 .field{
   width: 100%;
   padding: 10px 0px;
+  display: flex;
+}
+.field>label{
+  flex: 1;
+  font-size: 20px;
 }
 .field>input{
-  width: calc(100% - 100px);
-  float: right;
+  flex: 4;
 }
 .submit-btn{
   float: right;
@@ -98,9 +102,8 @@ input:focus{
     width: 100%;
     margin: 5px 0px;
   }
-  .field>input{
-    width : 100%;
-    margin-bottom: 10px;
+  .field{
+    flex-direction: column;
   }
   .submit-btn{
     width: 100%;

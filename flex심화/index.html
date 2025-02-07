@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 header</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/116a85af51.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="#"><img src="images/logo.png" alt="logo"></a>
+      </div>
+      <div class="gnb">
+        <a href="#">home</a>
+        <a href="#">about</a>
+        <a href="#">project</a>
+        <a href="#">plan & history</a>
+        <a href="#">location</a>
+        <a href="#">contact</a>
+      </div>
+      <div class="sns">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </nav>
+  </header>
+  <div class="trigger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</body>
+
+</html>
+
+<script>
+  $('.trigger').click(
+    function () {
+      $(this).toggleClass('active')
+      $('.gnb, .sns').toggleClass('on')
+    }
+  );
+</script>
