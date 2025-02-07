@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Noto+Sans+KR:wght@100..900&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+button,
+input,
+textarea {
+  font-family: "Noto Sans KR", serif;
+}
+
+body {
+  margin: 10px;
+  height: 100vh;
+  font-family: "Noto Sans KR", serif;
+  background-color: lightcoral;
+}
+.your-class{
+  border: 1px solid red;
+  width: 90%;
+  margin: auto;
+  background-color: #fff;
+}
+.your-class div{
+  border: 1px solid blue;
+  height: 300px;
+}

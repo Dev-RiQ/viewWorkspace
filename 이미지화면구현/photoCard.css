@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 20px 10px;
+  flex: 1;
+  max-width: 30%;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.crew1:hover .crew-info {
+  bottom: 0;
+  background: linear-gradient(transparent, red);
+}
+
+.crew2:hover .crew-info {
+  bottom: 0;
+  background: linear-gradient(transparent, green);
+}
+
+.crew3:hover .crew-info {
+  bottom: 0;
+  background: linear-gradient(transparent, blue);
+}
+
+.crew1:hover,
+.crew2:hover,
+.crew3:hover {
+  transform: translateY(-50px);
+  box-shadow: 0 10px 20px rgb(59, 59, 59);
+}
+
+.crew-image {
+  width: 100%;
+  display: flex;
+}
+
+.crew-info {
+  position: absolute;
+  height: 100%;
+  text-align: center;
+  align-content: end;
+  bottom: -100%;
+  transition: 0.3s;
+  padding: 10%;
+}
+
+.crew-info * {
+  margin: 15px 0;
+}
+
+.crew-name {
+  text-transform: capitalize;
+  color: #fff;
+  font-weight: 550;
+  font-size: 26px;
+
+}
+
+.crew-position {
+  text-transform: capitalize;
+  color: yellow;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.crew-text {
+  color: #fff;
+}
+
+.sns {
+  color: #fff;
+  margin-bottom: 10%;
+}
+
+.sns .fav {
+  height: 13px;
+  width: 13px;
+  border-radius: 30px;
+  padding: 4px;
+  margin: 0 1px;
+  border: 1px solid white;
+}
+
+@media (max-width:758px) {
+  body {
+    height: 100%;
+  }
+
+  .container {
+    padding-top: 50px;
+    flex-direction: column;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .crew1:hover,
+  .crew2:hover,
+  .crew3:hover {
+    margin-top: 20px;
+    transform: scale(1.1);
+  }
+}
