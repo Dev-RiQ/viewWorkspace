@@ -1,0 +1,178 @@
+@media (max-width:758px) {
+  .container {
+    min-width: 100%;
+  }
+
+  .inner {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .banner,
+  nav {
+    min-width: 100%;
+  }
+
+  .logo img {
+    margin-top: 5px;
+    height: 40px;
+  }
+
+  .gnb {
+    display: none;
+  }
+
+  .trigger {
+    position: fixed;
+    right: 10px;
+    top: 42px;
+    height: 40px;
+    width: 30px;
+    z-index: 1000;
+    display: block;
+  }
+  
+  .trigger.active {
+    z-index: 10000;
+  }
+  
+  .trigger span {
+    display: block;
+    background-color: black;
+    width: 100%;
+    height: 4px;
+    border: 1px solid;
+    margin: 7px 0;
+    transition: 0.3s;
+  }
+  
+  .trigger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  
+  .trigger.active span:nth-child(2) {
+    display: none;
+  }
+  
+  .trigger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+  
+  .trigger:hover span {
+    background-color: crimson;
+    border-color: crimson;
+  }
+  
+  .trigger.active:hover span {
+    background-color: crimson;
+    border-color: crimson;
+  }
+  
+  .side-bar {
+    display: block;
+    position: fixed;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .side-bar.active {
+    transform: translateX(-200px);
+    background-color: #fff;
+    z-index: 1;
+  }
+
+  .side-bar .gnb {
+    display: block;
+    margin-top: 100px;
+    padding: 6px;
+  }
+
+  .gnb li {
+    margin-bottom: 10px;
+  }
+
+  .gnb a {
+    border-bottom: 2px solid;
+    color: black;
+  }
+
+  .intro {
+    height: 60%;
+  }
+
+  .heading {
+    padding: 100px 50px;
+  }
+
+  .heading h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .heading p {
+    font-size: 18px;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-content h2 {
+    line-height: 40px;
+  }
+
+  .desc {
+    padding: 0;
+    padding-top: 50px;
+  }
+
+  .ranking-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ranking h2 {
+    line-height: 40px;
+  }
+
+  .testmonial h2 {
+    line-height: 36px;
+  }
+
+  .testmonial-content h2 {
+    font-size: 24px;
+  }
+
+  .callaction h2 {
+    padding: 0 20px;
+    font-size: 34px;
+  }
+
+  .callaction a {
+    display: block;
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  .festival a {
+    display: block;
+    margin-top: 15px;
+    margin-left: 5%;
+    width: 90%;
+  }
+
+  .festival h2 {
+    line-height: 40px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-content>* {
+    margin: 10px 0;
+  }
+}

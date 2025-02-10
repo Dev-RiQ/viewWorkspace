@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>예제 02</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    body {
+      height: 100vh;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      height: 100%;
+      gap: 10px;
+      grid-template:
+        "header header header header" 50px
+        "nav main main main" 1fr
+        "footer footer footer footer" 100px / 2fr 1fr 1fr 1fr;
+    }
+
+    header {
+      background-color: lightblue;
+      grid-area: header;
+    }
+
+    main {
+      background-color: blanchedalmond;
+      grid-area: main;
+    }
+
+    nav {
+      background-color: lightseagreen;
+      grid-area: nav;
+    }
+
+    footer {
+      background-color: lightsalmon;
+      grid-area: footer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid">
+    <header>header</header>
+    <main>main</main>
+    <nav>nav</nav>
+    <footer>footer</footer>
+  </div>
+</body>
+
+</html>

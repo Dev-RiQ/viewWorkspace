@@ -1,0 +1,490 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+/* reset CSS */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: "Montserrat", serif;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Montserrat", serif;
+  line-height: 1.5em;
+}
+
+/* common css */
+.container {
+  height: 100%;
+  min-width: 1300px;
+}
+
+.inner {
+  width: 1300px;
+  margin: auto;
+}
+
+/* header */
+header {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: 100;
+  transition: 0.3s;
+}
+
+header a:hover {
+  color: red;
+}
+
+header.active .gnb a:hover {
+  color: red;
+}
+
+header.active {
+  background-color: #fff;
+}
+
+header.active .gnb a {
+  color: #222;
+}
+
+.banner {
+  background-color: #222;
+  min-width: 1300px;
+}
+
+.banner .inner {
+  display: flex;
+  padding: 0px 10px;
+  justify-content: end;
+}
+
+.lnb{
+  padding-right: calc(100% - 100vw + 40px);
+}
+
+.lnb a {
+  color: #fff;
+  padding-left: 10px;
+}
+
+nav {
+  min-width: 1300px;
+}
+
+nav .inner {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  
+}
+
+.logo img {
+  height: 100%;
+}
+
+.gnb {
+  display: flex;
+  padding-right: calc(100% - 100vw + 40px);
+}
+
+.gnb li {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.gnb a {
+  color: #fff;
+}
+
+.gnb a:hover {
+  color: red;
+}
+
+/* intro */
+.intro {
+  background: url(images/intro.jpg) no-repeat center center;
+  background-size: cover;
+  height: 40%;
+}
+
+.heading {
+  text-align: center;
+  color: #fff;
+  padding: 100px 150px;
+}
+
+.heading h1 {
+  font-size: 60px;
+}
+
+.heading p {
+  font-size: 22px;
+  line-height: 1.5em;
+
+}
+
+/* about */
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.desc {
+  text-align: center;
+  flex: 3;
+  padding: 50px 30px;
+}
+
+.desc h2 {
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.desc p {
+  font-size: 16px;
+  line-height: 1.7em;
+}
+
+.desc a {
+  color: rgb(255, 123, 0);
+  font-weight: bold;
+}
+
+.desc a:hover {
+  text-decoration: underline;
+}
+
+.photo {
+  flex: 2;
+  padding: 30px;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 40% 50% 65% 35% / 35% 45% 55% 60%;
+}
+
+/* ranking */
+.ranking {
+  margin-bottom: 100px;
+}
+
+.ranking h2 {
+  font-weight: bold;
+  font-size: 30px;
+  padding: 0 50px;
+  margin: 50px 0;
+  padding-top: 100px;
+}
+
+.ranking-content {
+  display: flex;
+  justify-content: center;
+}
+
+.ranking-card {
+  width: 390px;
+  height: 620px;
+  margin: 10px;
+  border-radius: 40px 0;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgb(53, 52, 52);
+  position: relative;
+}
+
+.ranking-card>img {
+  height: 300px;
+  margin-bottom: 10px;
+}
+
+.tag {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.must {
+  background-color: rgb(185, 24, 24);
+}
+
+.good {
+  background-color: rgb(40, 60, 245);
+}
+
+.ranking-content p {
+  margin: 10px 20px;
+}
+
+.ranking-title {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.ranking-content a {
+  color: rgb(151, 21, 32);
+  margin: 0 20px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 20px;
+}
+
+.ranking-content a:hover .icon-arrow {
+  transform: translateX(15px);
+}
+
+.icon-arrow {
+  transition: 0.3s;
+}
+
+/* testmonial */
+.testmonial {
+  padding: 100px 0;
+}
+
+.testmonial-content {
+  text-align: center;
+}
+
+.testmonial-content h2 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.testmonial-content hr {
+  width: 120px;
+  height: 4px;
+  margin-bottom: 30px;
+  border: 0;
+  background-color: royalblue;
+}
+
+
+.client {
+  height: 300px;
+  padding: 30px;
+}
+
+.client-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-title img {
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.client-info {
+  padding: 15px;
+}
+
+.client-title h4 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.client-title p {
+  margin: 0;
+}
+
+
+/* callaction */
+.callaction {
+  text-align: center;
+  height: 450px;
+  background: url(images/callaction-01.jpg) no-repeat center center;
+  align-content: center;
+  color: #fff;
+  position: relative;
+  z-index: -1;
+}
+
+.callaction::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right bottom, violet, rgb(219, 235, 7));
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.callaction h2 {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.2em;
+  padding: 0px 250px;
+}
+
+.callaction h2 span {
+  font-weight: 500;
+}
+
+.callaction a {
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: rgb(24, 190, 24);
+  color: #fff;
+}
+
+.callaction a:hover {
+  background-color: orange;
+}
+
+/* festival */
+.festival {
+  text-align: center;
+  height: 270px;
+  align-content: center;
+  background-color: #222;
+  color: #fff;
+}
+
+.festival h2 {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.festival h2 span {
+  font-weight: 600;
+}
+
+.festival a {
+  font-size: 16px;
+  border-radius: 10px;
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+  color: #fff;
+}
+
+.festival :nth-child(2) {
+  background-color: orange;
+}
+
+.festival :nth-child(3) {
+  background-color: rgb(255, 246, 235);
+  color: #222;
+}
+
+.festival :nth-child(2):hover {
+  background-color: rgb(255, 217, 0);
+}
+
+.festival :nth-child(3):hover {
+  background-color: rgb(236, 170, 108);
+  color: #222;
+}
+
+/* footer */
+footer {
+  background-color: black;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  padding: 30px;
+  text-align: center;
+  line-height: 0.4em;
+}
+
+.community {
+  flex: 1;
+}
+
+.network {
+  flex: 1;
+}
+
+.help {
+  flex: 2;
+}
+
+.footer-content .footer-title {
+  color: #fff;
+}
+
+.footer-content p {
+  color: gray;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+.gototop {
+  background-color: skyblue;
+  position: fixed;
+  bottom: -80px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 32px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.gototop.active {
+  bottom: 20px;
+  opacity: 1;
+}
+
+.trigger{
+  display: none;
+}
+.side-bar{
+  display: none;
+}
