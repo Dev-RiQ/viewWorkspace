@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex02</title>
+  <style>
+    button {
+      border: none;
+      font-size: 1.2em;
+      padding: 20px;
+      background-color: royalblue;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: rgb(113, 134, 199);
+    }
+
+    .container {
+      border: 1px solid black;
+      height: 800px;
+      width: 500px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: pink;
+      border: 1px solid red;
+      margin: 5px;
+    }
+
+    #first {
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn-add">박스 추가</button>
+  <button class="btn-remove">박스 삭제</button>
+  <div class="container">
+    <div id="first" class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
+
+</html>
+<script>
+  let cnt = 1;
+  const container = document.querySelector('.container')
+  const boxFirst = document.querySelector('#first')
+  const addBtn = document.querySelector('.btn-add')
+  const deleteBtn = document.querySelector('.btn-remove')
+
+  //태그생성
+  function addBox() {
+    if (document.querySelectorAll('.box').length == 104)
+      alert('그만 만들어')
+    else {
+      const newBox = document.createElement('div')
+      newBox.classList.add('box')
+      newBox.innerHTML = cnt++
+      newBox.style.lineHeight = '50px'
+      newBox.style.textAlign = 'center'
+      if (cnt % 10 == 1) {
+        newBox.style.backgroundColor = 'crimson'
+      }
+      container.appendChild(newBox)
+      document.querySelector('.box').id = 'first'
+    }
+  }
+  addBtn.addEventListener("click", addBox)
+  deleteBtn.addEventListener("click", () => {
+    const box = document.querySelector('.box')
+    if (!box)
+      alert('더이상 지울 박스가 없습니다')
+    else {
+      container.removeChild(box)
+      if (!!document.querySelector('.box'))
+        document.querySelector('.box').id = 'first'
+    }
+  })
+</script>

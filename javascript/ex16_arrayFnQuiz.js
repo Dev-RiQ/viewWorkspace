@@ -31,3 +31,39 @@ console.log(`${pets.reduce((p, n) => {
 }, 0) / pets.length} 살`)
 // 4.동물 나이순으로 내림차순 정렬 : 기존 배열 건드리지 않는다 
 console.log(pets.sort((a, b) => a.age < b.age ? 1 : -1))
+
+// some , every 
+
+// some => 무조건 리턴이 true이면 반복문 중단
+
+console.log("----some----")
+// 개가 있으면 true 
+let cnt = 0;
+res = pets.some(obj => {
+  cnt++;
+  return obj.kind === '개'
+})
+
+console.log(res);
+console.log(cnt);
+
+console.log("----every----")
+// every => 무조건 리턴이 false 이면 반복문 중단
+cnt = 0;
+res = pets.every(obj => {
+  cnt++;
+  return obj.kind === '개';
+})
+console.log(res);
+console.log(cnt);
+
+console.log("----forEach----")
+cnt = 0;
+// 매번 요소마다 함수를 호출하기때문에 반복문 중간에 멈출 수 없다 : 무조건 첨 - 배열요소 끝까지 한다
+pets.forEach(obj => {
+  cnt += 1;
+  if (obj.kind === '개') return true;
+  // console.log("test");
+})
+
+console.log(cnt);
