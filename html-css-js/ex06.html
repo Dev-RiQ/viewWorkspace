@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex06</title>
+  <style>
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ancestor {
+      width: 400px;
+      height: 300px;
+      background-color: yellowgreen;
+    }
+
+    .parent {
+      width: 300px;
+      height: 200px;
+      background-color: yellow;
+    }
+
+    .child {
+      width: 200px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ancestor">
+    <div class="parent">
+      <div class="child">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+  // 이벤트 버블링
+  const div = document.querySelectorAll('div')
+  div.forEach(d => d.addEventListener('click', (e) => {
+    e.stopPropagation() // 이벤트 전파방지
+    console.log(e.currentTarget)
+  }))
+</script>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex08</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 400px;
+      text-align: center;
+    }
+
+    .container h1 {
+      font-size: 24px;
+      margin: 30px 0;
+    }
+
+    .question {
+      width: 230px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .container h2 {
+      font-size: 16px;
+    }
+
+    form {
+      justify-items: center;
+    }
+
+    form span {
+      font-size: 30px;
+      margin: 0 5px;
+    }
+
+    form span.worng {
+      color: crimson;
+    }
+
+    form input {
+      width: 80px;
+      font-size: 30px;
+    }
+
+    form>* {
+      margin: 10px;
+    }
+
+    .result {
+      width: 300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .result button {
+      width: 80px;
+      height: 40px;
+      border: 0;
+      outline: 0;
+      background-color: royalblue;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: rgb(54, 188, 206);
+    }
+
+    button:active {
+      background-color: skyblue;
+    }
+
+    .score {
+      font-size: 32px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>산술 문제를 풀어봅시다</h1>
+    <h2>수식을 계산하여 답을 입력하고 채점 버튼을 누르세요</h2>
+    <form>
+      <div class="question">
+        <span class="num1"></span>
+        <span class="calc"></span>
+        <span class="num2"></span>
+        <span> = </span>
+        <input type="text">
+      </div>
+      <div class="question">
+        <span class="num1"></span>
+        <span class="calc"></span>
+        <span class="num2"></span>
+        <span> = </span>
+        <input type="text">
+      </div>
+      <div class="question">
+        <span class="num1"></span>
+        <span class="calc"></span>
+        <span class="num2"></span>
+        <span> = </span>
+        <input type="text">
+      </div>
+      <div class="question">
+        <span class="num1"></span>
+        <span class="calc"></span>
+        <span class="num2"></span>
+        <span> = </span>
+        <input type="text">
+      </div>
+      <div class="result">
+        <button type="button">채점</button>
+        <p class="score">0점</p>
+        <button>다시</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
+<script>
+  const question = document.querySelectorAll('.question')
+  function getCalc(n) {
+    switch (n) {
+      case 1: return "+"
+      case 2: return "-"
+      case 3: return "/"
+      case 4: return "*"
+    }
+  }
+  function setQuestion() {
+    question.forEach((q) => {
+      q.querySelector('.num1').innerHTML = Math.ceil(Math.random() * 10)
+      q.querySelector('.calc').innerHTML = getCalc(Math.ceil(Math.random() * 4))
+      q.querySelector('.num2').innerHTML = Math.ceil(Math.random() * 10)
+      q.querySelector('input').value = ''
+    })
+  }
+  setQuestion();
+
+  function getAnswer(n1, c, n2) {
+    n1 = parseInt(n1)
+    n2 = parseInt(n2)
+    switch (c) {
+      case '+': return n1 + n2
+      case '-': return n1 - n2
+      case '/': return parseInt(n1 / n2)
+      case '*': return n1 * n2
+    }
+  }
+
+  function checkAnswer(answer, checkValid) {
+    answer.querySelectorAll('span').forEach((d) => {
+      if (checkValid) d.classList.remove('worng')
+      else d.classList.add('worng')
+    })
+  }
+  function getSum() {
+    let sum = 0;
+    question.forEach((a) => {
+      let value = a.querySelector('input').value
+      let answer = getAnswer(a.querySelector('.num1').textContent, a.querySelector('.calc').textContent, a.querySelector('.num2').textContent)
+      let checkValid = value != "" && value == answer
+      if (checkValid) sum++
+      checkAnswer(a, checkValid)
+    })
+    return sum
+  }
+  let totalSum = 0;
+  const result = document.querySelector('.result button')
+  result.addEventListener('click', () => {
+    let sum = getSum();
+    const score = document.querySelector('.score').innerHTML = (totalSum + sum) + "점";
+    if (sum == 4) {
+      totalSum += sum
+      setQuestion()
+    }
+  })
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex11</title>
+</head>
+
+<body>
+
+  <main>
+    <h1>유저리스트</h1>
+    <div class="search">
+      <input type="text" name="" id="" placeholder="id 검색">
+    </div>
+    <p id="search-result"></p>
+  </main>
+</body>
+
+</html>
+<script>
+  const userList = [
+    { id: 1, name: "홍길동", address: "서울" },
+    { id: 2, name: "둘리", address: "대전" },
+    { id: 3, name: "또치", address: "대구" },
+  ]
+
+  const p = document.querySelector('#search-result')
+  const search = document.querySelector('.search input')
+  search.addEventListener('keyup', (e) => {
+    const value = e.target.value
+    const searchData = userList.find((data) => data.id == value)
+    p.innerHTML = searchData ? searchData.name : '유저 검색 결과 없음'
+  })
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex12</title>
+</head>
+
+<body>
+  <main>
+    <div>
+      <button class="ascending">오름차순</button>
+      <button class="descending">내림차순</button>
+    </div>
+    <ul class="users"></ul>
+  </main>
+</body>
+
+</html>
+<script>
+  const users = document.querySelector('.users')
+  const userDataList = [
+    { id: 29, name: '기린' },
+    { id: 2, name: '곰' },
+    { id: 10, name: '여우' },
+    { id: 4, name: '사자' },
+    { id: 101, name: '호랑이' },
+  ]
+  function setUserData(data) {
+    return `<li>${data.id}:${data.name}</li>`
+  }
+  function printAll() {
+    userDataList.forEach((i) => {
+      users.innerHTML += setUserData(i);
+    })
+  }
+  printAll()
+
+  function newPrintAll() {
+    users.innerHTML = ''
+    printAll()
+  }
+
+  const btnASC = document.querySelector('.ascending')
+  btnASC.addEventListener('click', () => {
+    userDataList.sort((a, b) => a.id - b.id)
+    newPrintAll()
+  })
+
+  const btnDES = document.querySelector('.descending')
+  btnDES.addEventListener('click', () => {
+    userDataList.sort((a, b) => b.id - a.id)
+    newPrintAll()
+  })
+
+</script>
