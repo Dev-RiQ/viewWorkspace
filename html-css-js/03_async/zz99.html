@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응속도테스트</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    button {
+      border: none;
+      font-size: 30px;
+      padding: 20px;
+      background-color: blueviolet;
+      margin-bottom: 30px
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    button:active {
+      opacity: 0.5;
+    }
+
+    .box {
+      width: 400px;
+      height: 400px;
+      background-color: rgb(41, 182, 41);
+      font-size: 50px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 400px;
+    }
+
+    .active {
+      background-color: crimson;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>반응 속도 테스트</h1>
+  <h3>박스 색이 변하면 클릭</h3>
+  <button class="btn-start">시작</button>
+  <div class="box"></div>
+</body>
+
+</html>
+
+<script>
+  const box = document.querySelector('.box')
+  const result = document.querySelector('.result')
+  const btnStart = document.querySelector('.btn-start')
+  let startTime = 0;
+  let diffTime = 0;
+  let isClick = false;
+  let isEnd = true;
+
+  box.addEventListener('click', () => {
+    if (isEnd) return
+    if (isClick) {
+      box.innerText = '실격'
+      return
+    }
+    if (box.innerText == '실격') return
+    diffTime = new Date().getTime() - startTime
+    box.innerText = `${String(diffTime / 1000).padStart(1, '0')} 초`
+    isClick = false
+    isEnd = true
+  })
+
+  btnStart.addEventListener('click', () => {
+    if (isClick) return
+    box.innerText = ''
+    isEnd = false;
+    box.classList.remove('active')
+    let randomTime = parseInt(Math.random() * 3000)
+    setTimeout(() => {
+      box.classList.add('active')
+      startTime = new Date().getTime()
+      isClick = false;
+    }, 2000 + randomTime);
+    isClick = true;
+  })
+
+</script>

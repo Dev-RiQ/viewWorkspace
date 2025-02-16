@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="print">
+    <h1>00:00:00</h1>
+  </div>
+  <button class="stop">중지</button>
+</body>
+
+</html>
+<script>
+  const time = document.querySelector('.print h1')
+  let count = 4397632795;
+  function printTime(c) {
+    let showTime = ''
+    let times = [parseInt(c / 3600), parseInt(c % 3600 / 60), parseInt(c % 60)]
+    times.forEach(i => showTime += (String(i).padStart(2, '0') + ':'))
+    return showTime.substring(0, showTime.length - 1)
+  }
+  function setTime() {
+    time.innerHTML = printTime(++count)
+  }
+  let interval = setInterval(setTime, 1000);
+
+  const btnStop = document.querySelector('.stop')
+  btnStop.addEventListener('click', () => {
+    if (btnStop.innerHTML == '중지') {
+      clearInterval(interval)
+      btnStop.innerHTML = '재시작'
+    } else if (btnStop.innerHTML == '재시작') {
+      time.innerHTML = '00:00:00'
+      count = 0
+      interval = setInterval(setTime, 1000);
+      btnStop.innerHTML = '중지'
+    }
+  })
+</script>

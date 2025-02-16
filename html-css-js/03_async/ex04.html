@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>0</h1>
+  <button class="btn1">1초 뒤 초기화 다시시작</button>
+  <button class="btn2">완전 종료</button>
+</body>
+
+</html>
+
+<script>
+  let count = 23179851012
+  const h1 = document.querySelector('h1')
+  const btn1 = document.querySelector('.btn1')
+  const btn2 = document.querySelector('.btn2')
+  let time = true;
+
+  const sayHi = () => {
+    h1.innerHTML = `${++count} SayHi~`
+  }
+
+  let interval = setInterval(sayHi, 50)
+
+  btn1.addEventListener('click', () => {
+    if (!time) return
+    console.log('재시작 버튼 누름')
+    time = !time;
+    setTimeout(() => {
+      clearInterval(interval)
+      count = 0
+      interval = setInterval(sayHi, 50)
+      time = !time;
+    }, 1000);
+  })
+  btn2.addEventListener('click', () => {
+    clearInterval(interval)
+  })
+</script>

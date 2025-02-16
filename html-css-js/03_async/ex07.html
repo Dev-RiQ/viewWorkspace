@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex07</title>
+  <script defer src="ex07.js"></script>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    .header {
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #b1afaf;
+      border-radius: 5px;
+    }
+
+    .input-group {
+      padding: 20px;
+    }
+
+    #username {
+      border: 1px solid cornflowerblue;
+      border-radius: 5px 0 0 5px;
+      height: 30px;
+    }
+
+    #btn-add {
+      position: absolute;
+      height: 34px;
+      border: 1px solid cornflowerblue;
+      border-radius: 0 5px 5px 0;
+
+    }
+
+    .btn-group {
+      padding: 20px;
+
+    }
+
+    .btn-group button {
+      background-color: cornflowerblue;
+      border: none;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 5px;
+
+    }
+
+    #box {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    #box ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border: 1px solid #b1afaf;
+      border-radius: 5px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+    .item {
+      border: 1px solid #999;
+      width: 27.5%;
+      height: 20px;
+      padding: 2%;
+      text-align: center;
+      line-height: 20px;
+      border-radius: 5px;
+      margin: 5px 0;
+      margin-left: 1%;
+    }
+
+    .item.on {
+      background-color: royalblue;
+      color: #fff;
+    }
+
+    .item.fix {
+      background-color: crimson;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="input-group">
+        <input type="text" id="username">
+        <button id="btn-add"> ADD</button>
+      </div>
+      <div class="btn-group">
+        <button id="btn-start">시작</button>
+        <button id="btn-stop">정지</button>
+      </div>
+    </div>
+    <div id="box">
+      <ul id="user-list">
+      </ul>
+      <ul id="selected-list">
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

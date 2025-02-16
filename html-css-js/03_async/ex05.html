@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex05</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      height: 100%;
+      background-color: rgb(240, 187, 143);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      grid-template-areas: "grid nav";
+    }
+
+    .grid {
+      grid-area: grid;
+      overflow-Y: scroll;
+      align-items: start;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+    .box {
+      margin: 10px;
+      text-align: center;
+      line-height: 60px;
+      font-size: 24px;
+      height: 60px;
+      width: 180px;
+      background-color: rgb(233, 90, 233);
+    }
+
+    nav {
+      min-width: 200px;
+      grid-area: nav;
+      background-color: lightgray;
+      text-align: center;
+      padding: 10px;
+    }
+
+    button {
+      border: none;
+      background-color: royalblue;
+      color: #fff;
+      font-size: 30px;
+      padding: 20px 30px;
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid">
+      <div class="box">서울</div>
+    </div>
+    <nav>
+      <button class="btn-add">추가하기</button>
+      <button class="btn-stop">정지하기</button>
+      <button class="btn-clear">정리하기</button>
+    </nav>
+  </div>
+</body>
+
+</html>
+<script>
+  let data = ["서울", "충주", "부산", "대구", "경기", "광주", "광양", "제주", "용인"]
+  let interval;
+
+  const grid = document.querySelector('.grid')
+  let idx = grid.childElementCount
+
+  const addBox = () => {
+    let add = document.createElement('div')
+    add.classList.add('box')
+    add.innerText = `${data[idx++]}`
+    grid.appendChild(add)
+    // grid.innerHTML += `<div class="box">${data[idx]}</div>`
+  }
+
+  const addData = () => {
+    if (idx >= data.length) {
+      clearInterval(interval)
+      return
+    }
+    addBox()
+  }
+
+  const btnAdd = document.querySelector('.btn-add')
+  btnAdd.addEventListener('click', () => {
+    if (interval != undefined) return
+    interval = setInterval(addData, 300)
+  })
+
+  const btnStop = document.querySelector('.btn-stop')
+  btnStop.addEventListener('click', () => {
+    clearInterval(interval)
+    interval = undefined
+  })
+
+  const btnClear = document.querySelector('.btn-clear')
+  btnClear.addEventListener('click', () => {
+    if (idx == 0) return
+    clearInterval(interval)
+    interval = undefined
+    grid.innerText = ''
+    idx = 0;
+  })
+</script>

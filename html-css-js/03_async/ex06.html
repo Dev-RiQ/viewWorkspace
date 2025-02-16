@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex06</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 90px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>남은 시간 <span></span>초</h1>
+</body>
+
+</html>
+
+<script>
+  const span = document.querySelector('span')
+  const h1 = document.querySelector('h1')
+  let time = 500
+  setInterval(() => {
+    span.innerText = `${String(parseInt(time / 100)).padStart(1, '0')}.${String(time % 100).padStart(2, '0')}`
+    time -= 1
+  }, 10);
+  setTimeout(() => {
+    h1.innerText = '5초가 지났습니다!'
+  }, 5000);
+</script>
