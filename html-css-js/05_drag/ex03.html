@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex03</title>
+  <style>
+    .container {
+      display: flex;
+    }
+
+    .box {
+      width: 30px;
+      height: 30px;
+      border: 1px solid;
+      margin-right: 5px;
+      text-align: center;
+      font-size: 24px;
+      line-height: 30px;
+      cursor: pointer;
+    }
+
+    .box:hover {
+      background-color: skyblue;
+    }
+
+    .click {
+      background-color: royalblue;
+    }
+
+    .click.box:hover {
+      background-color: royalblue;
+    }
+
+    .check {
+      background-color: lightcoral;
+    }
+
+    input {
+      width: 50px;
+    }
+
+    .trash {
+      margin-top: 20px;
+      width: 300px;
+      height: 100px;
+      border: 1px solid;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <input type="text">
+  <div class="trash"></div>
+</body>
+
+</html>
+<script>
+  let num = 1
+  const $container = document.querySelector('.container')
+  const $boxs = [...document.querySelectorAll('.box')]
+  const $input = document.querySelector('input')
+  const $trash = document.querySelector('.trash')
+  let box;
+
+  $boxs.forEach(box => box.setAttribute('draggable', 'true'))
+
+  $container.addEventListener('mousedown', (e) => {
+    if (e.target == $container) return
+    if (!e.target.innerText)
+      e.target.innerText = num++
+    e.target.classList.add('click')
+  })
+  $container.addEventListener('mouseout', (e) => {
+    if (e.target == $container) return
+    e.target.classList.remove('click')
+  })
+  $container.addEventListener('mouseup', (e) => {
+    if (e.target == $container) return
+    e.target.classList.remove('click')
+  })
+  $container.addEventListener('drag', (e) => {
+    if (e.target == $container) return
+    box = e.target
+  })
+
+  $trash.addEventListener('dragover', (e) => {
+    e.preventDefault()
+  })
+  $trash.addEventListener('drop', (e) => {
+    box.innerText = ''
+    box.classList.remove('click')
+  })
+
+  $input.addEventListener('keyup', (e) => {
+    if (e.isComposing) return;
+    if (e.target.value == '') {
+      box.classList.remove('check')
+      return
+    }
+    $boxs.forEach(b => {
+      if (b.innerText == e.target.value) {
+        b.classList.add('check')
+        box = b
+      }
+    })
+  })
+  $input.addEventListener('keydown', (e) => {
+    if (e.isComposing) return;
+    if (e.code == 'Enter') {
+      $boxs.forEach(b => {
+        if (b.innerText == e.target.value) {
+          b.classList.remove('check')
+          b.innerText = ''
+        }
+      })
+      e.target.value = ''
+    }
+  })
+</script>

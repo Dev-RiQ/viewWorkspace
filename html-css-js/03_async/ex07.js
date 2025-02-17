@@ -13,16 +13,16 @@ data.forEach(addData)
 
 //[1] userList input 값을 입력 => <li class="item">박연미</li> 추가
 document.querySelector('#btn-add').addEventListener('click', () => {
-  let $input = document.querySelector('input')
-  if ($input.value == '') return
-  if (data.includes($input.value))
+  let $input = document.querySelector('input').value
+  if ($input == '') return
+  if (data.includes($input))
     alert('이미 있는 값입니다.')
   else {
-    alert(`${$input.value} 추가 완료`)
-    data += $input.value
-    addData($input.value)
+    alert(`${$input} 추가 완료`)
+    data += $input
+    addData($input)
   }
-  $input.value = ''
+  $input = ''
 })
 
 //[2] 시작버튼을 누르면 순차적으로 on 붙이기
@@ -63,28 +63,23 @@ document.querySelector('#btn-stop').addEventListener('click', () => {
   clickStop = true;
   let rdNum = parseInt(Math.random() * 20) + 5
   changeTime()
-  setTimeout(() => {
-    changeTime()
-    setTimeout(() => {
-      changeTime()
-      setTimeout(() => {
-        changeTime()
-        setTimeout(() => {
-          changeTime()
-          setTimeout(() => {
-            clearInterval(interval)
-            setResult()
-          }, timeInterval * (parseInt(Math.random() * 2) + 1) + 500);
-        }, timeInterval * (parseInt(Math.random() * 3) + 1));
-      }, timeInterval * (parseInt(Math.random() * 3) + 2));
-    }, timeInterval * (parseInt(Math.random() * 4) + 2));
-  }, timeInterval * (parseInt(Math.random() * 4) + 3));
 })
 
+let count = 0
 function changeTime() {
   clearInterval(interval)
-  timeInterval *= 2
-  newInterval()
+  if (count >= 3) {
+    setResult()
+    count = 0
+  }
+  else {
+    timeInterval *= 2
+    newInterval()
+    setTimeout(() => {
+      changeTime()
+      count++
+    }, timeInterval * (parseInt(Math.random() * 3) + 2));
+  }
 }
 
 function setResult() {
