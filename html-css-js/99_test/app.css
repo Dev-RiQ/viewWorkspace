@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+.map {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  left: 4.2%;
+  top: 4.5%;
+  width: 92.5%;
+  height: 92.5%;
+}
+
+.point {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.ban {
+  background-image: url(images/ban.png);
+}
+
+.white {
+  background-image: url(images/white.png);
+}
+
+.black {
+  background-image: url(images/black.png);
+}
+
+.ready {
+  opacity: 0.5;
+}
+
+.win-box {
+  position: fixed;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.win-box.on {
+  display: flex;
+}
+
+.win {
+  position: fixed;
+  width: 100%;
+  aspect-ratio: 1 /1;
+  background-image: url(images/win.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: #222;
+  opacity: 0.7;
+}
+
+.winner {
+  position: absolute;
+  width: 25%;
+  top: 43%;
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  opacity: 1;
+}
+
+.win2 {
+  position: relative;
+  top: 20%;
+  width: 70%;
+  transform: rotate(5deg);
+  aspect-ratio: 1 / 1;
+  background-image: url(images/win2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  opacity: 1;
+}
+
+button {
+  position: absolute;
+  width: 25%;
+  aspect-ratio: 2/1;
+  bottom: 2%;
+  right: 2%;
+  background-image: url(images/replay.png);
+  background-size: contain;
+  background-color: rgba(240, 248, 255, 0);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 0;
+  z-index: 1000;
+  font-size: 3vw;
+  cursor: pointer;
+}
+
+button:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 55px;
+  background-color: skyblue;
+  opacity: 0.2;
+}
+
+button:active::before {
+  opacity: 0.4;
+}
