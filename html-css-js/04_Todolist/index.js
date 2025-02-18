@@ -3,9 +3,10 @@ const btnFooter = document.querySelector('.footer_btn')
 const item = document.querySelector('.items')
 let items = []
 let idx = 0;
-let isDel = false
-
 let cnt = 1;
+
+loadLocalStorageData()
+
 function addList() {
   let $input = document.querySelector('input')
   if (!$input.value.trim()) return
@@ -19,7 +20,7 @@ function addList() {
   $input.value = ''
   btnDelete = document.querySelectorAll('.item_delete')
   btnDelete.forEach(i => i.addEventListener('click', () => deleteData(i)))
-  isDel = false
+  localStorage.setItem('shopping_list', JSON.stringify(items))
 }
 
 function createList(input) {
@@ -74,12 +75,6 @@ document.querySelector('input').addEventListener('keydown', (e) => {
 function deleteData(i) {
   const itemRow = document.querySelectorAll('.item_row')
   idx = 0;
-  if (itemRow.length == 1 && isDel) {
-    document.querySelector('.item_row').remove()
-    items = []
-    return
-  }
-  if (itemRow.length == 1) isDel = true
   itemRow.forEach(k => {
     if (k.getAttribute('data-id') == i.querySelector('svg').getAttribute('data-id')) {
       k.remove()
@@ -87,4 +82,20 @@ function deleteData(i) {
     }
     idx++
   })
+  if (idx > items.length) idx = items.length
+  localStorage.setItem('shopping_list', JSON.stringify(items))
+}
+
+function loadLocalStorageData() {
+  let data = localStorage.getItem('shopping_list')
+  if (data === null) return
+  items = JSON.parse(data)
+  writeItems()
+}
+
+function writeItems() {
+  items.forEach(i => item.appendChild(createList(i)))
+  btnDelete = document.querySelectorAll('.item_delete')
+  btnDelete.forEach(i => i.addEventListener('click', () => deleteData(i)))
+  idx = cnt - 1
 }

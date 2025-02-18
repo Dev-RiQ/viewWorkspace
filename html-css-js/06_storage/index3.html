@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index3</title>
+</head>
+
+<body>
+  <input id="save-input" type="text">
+  <button id="save">저장하기</button>
+  <br>
+  <br>
+  <input id="del-input" type="text">
+  <button id="delete">삭제하기</button>
+  <hr>
+  <p></p>
+</body>
+
+</html>
+
+<script>
+  let inputData = []
+  const $p = document.querySelector('p')
+
+  {
+    (() => {
+      let data = localStorage.getItem('input_data')
+      if (data === null) return
+      JSON.parse(data).forEach(i => addAndWriteInputData(i))
+    })()
+  }
+
+  document.querySelector('#save').addEventListener('click', () => {
+    let value = getInputValue('#save-input')
+    if (!value.trim() || inputData.includes(value)) return
+    addAndWriteInputData(value)
+  })
+
+  function addAndWriteInputData(value) {
+    if (inputData.length == 0) $p.innerText = ''
+    inputData.push(value)
+    localStorage.setItem('input_data', JSON.stringify(inputData))
+    $p.innerText += `${value},\u00A0`
+  }
+
+  document.querySelector('#delete').addEventListener('click', () => {
+    let value = getInputValue('#del-input')
+    if (inputData.length == 0) {
+      $p.innerText = '삭제할 값이 없습니다'
+      return
+    }
+    if (!value.trim() || !inputData.includes(value)) return
+    spliceAndWriteInputData(value)
+  })
+
+  function spliceAndWriteInputData(value) {
+    inputData.splice(inputData.indexOf(value), 1)
+    localStorage.setItem('input_data', JSON.stringify(inputData))
+    $p.innerText = ''
+    inputData.forEach(i => $p.innerText += `${i},\u00A0`)
+  }
+
+  function getInputValue(type) {
+    let input = document.querySelector(type)
+    let value = input.value
+    input.value = ''
+    return value
+  }
+</script>
