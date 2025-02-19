@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store ">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div></div>
+
+
+</body>
+
+</html>
+
+<script>
+
+  async function fetchData() {
+    const url = 'https://www.7timer.info/bin/astro.php?lon=113.2&lat=23.1&ac=0&unit=metric&output=json&tzshift=0';
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('데이터 요청 실패 에러 ');
+    }
+
+    const result = await response.json();
+    console.log(result);
+    getData(result);
+  }
+
+  fetchData().catch((error) => {
+    console.log('Error!! ');
+    console.log(error)
+  })
+
+
+  function getData(data) {
+    // console.log(data);
+    document.querySelector('div').innerHTML = JSON.stringify(data);
+  }
+
+
+</script>

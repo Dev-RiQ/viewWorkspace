@@ -17,6 +17,7 @@ const map = document.querySelector('.map')
   })()
 }
 
+const point = document.querySelectorAll('.point')
 const winBox = document.querySelector('.win-box')
 const winner = document.querySelector('.winner')
 const replay = document.querySelector('button')
@@ -24,6 +25,7 @@ const replay = document.querySelector('button')
 let turn = 'black'
 let action = false
 let mapCheck = Array.from(Array(15), () => new Array(15).fill(0))
+let round = 1
 
 let now
 let before
@@ -113,7 +115,6 @@ function daegak1(idx1, idx2) {
 function daegak2(idx1, idx2) {
   let cnt = 0;
   let sum = idx1 + idx2
-  console.log(sum)
   if (sum <= 14)
     for (let i = 0; i < sum + 1; i++)
       if (mapCheck[sum - i][i] == num) {
@@ -137,21 +138,18 @@ function changeTurn() {
   action = false
   num = turn === 'black' ? 2 : 1
   turn = turn === 'black' ? 'white' : 'black'
-  if (num == 1)
-    ban33()
-}
-
-function ban33() {
-  for (let i = 0; i < 15; i++) {
-    for (let k = 0; k < 15; k++) {
-
-    }
-  }
+  round++
+  if (round == 226)
+    draw()
 }
 
 function gameEnd() {
   winBox.classList.add('on')
   winner.classList.add(turn)
+}
+
+function draw() {
+  winBox.classList.add('on')
 }
 
 replay.addEventListener('click', () => {

@@ -54,7 +54,7 @@ img {
 }
 
 .win-box {
-  position: fixed;
+  position: absolute;
   width: 100%;
   aspect-ratio: 1 / 1;
   display: none;
@@ -67,7 +67,7 @@ img {
 }
 
 .win {
-  position: fixed;
+  position: absolute;
   width: 100%;
   aspect-ratio: 1 /1;
   background-image: url(images/win.png);
@@ -126,7 +126,7 @@ button:hover::before {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 55px;
+  border-radius: 35px;
   background-color: skyblue;
   opacity: 0.2;
 }

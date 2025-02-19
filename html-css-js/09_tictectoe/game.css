@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.header {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+}
+
+.main {
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: burlywood;
+}
+
+.maps {
+  width: 60%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.map {
+  aspect-ratio: 1 / 1;
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.over {
+  background-color: yellowgreen;
+  opacity: 0.5;
+}
+
+.map.O {
+  background-color: pink;
+}
+
+.map.X {
+  background-color: skyblue;
+}
+
+.start {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: burlywood;
+  z-index: 1000;
+}
+
+.start.off {
+  display: none;
+}
+
+.play {
+  position: fixed;
+  width: 30%;
+  height: 10%;
+  z-index: 2000;
+  border: 0;
+  border-radius: 20px;
+  font-size: 5vw;
+}
+
+.play:hover {
+  background-color: #ddd;
+}
+
+.play:active {
+  background-color: #bbb;
+}
+
+.result {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.back {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: burlywood;
+  opacity: 0.5;
+}
+
+.res {
+  position: fixed;
+  top: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 20%;
+  z-index: 2000;
+  border-radius: 20px;
+  font-size: 12vw;
+}
+
+.replay {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 30%;
+  height: 10%;
+  z-index: 2000;
+  border: 0;
+  border-radius: 20px;
+  font-size: 5vw;
+}
+
+.replay:hover {
+  background-color: #ddd;
+}
+
+.replay:active {
+  background-color: #bbb;
+}
+
+.result.on {
+  display: flex;
+}
